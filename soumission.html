@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soumission Gratuite — Groupe SPB</title>
+  <meta name="description" content="Demandez une soumission gratuite pour vos travaux d'excavation, terrassement, aménagement paysager, pavé uni ou murets de soutènement." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Groupe SPB" class="logo-img" />
+      </a>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="nav-cta"><a href="soumission.html" class="active">Soumission gratuite</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Soumission Gratuite</h1>
+      <p>Remplissez le formulaire ci-dessous et nous vous contacterons dans les 24 heures.</p>
+    </div>
+  </section>
+
+  <!-- ========== FORMULAIRE ========== -->
+  <section class="section form-section">
+    <div class="container">
+      <div class="form-grid">
+
+        <!-- Infos de contact -->
+        <div class="form-info">
+          <h2>Parlons de votre projet</h2>
+          <p>Notre équipe analyse votre demande et vous propose une soumission détaillée, gratuite et sans engagement. Nous desservons Bromont, Sutton, Knowlton, Lac Brome, Shefford et Cowansville.</p>
+
+          <div class="contact-item">
+            <div class="contact-icone">📞</div>
+            <div>
+              <strong>Téléphone</strong>
+              <a href="tel:+15147798590">514-779-8590</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icone">✉️</div>
+            <div>
+              <strong>Courriel</strong>
+              <a href="mailto:infogroupespb@gmail.com">infogroupespb@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icone">📍</div>
+            <div>
+              <strong>Régions desservies</strong>
+              Bromont, Sutton, Knowlton,<br>
+              Lac Brome, Shefford, Cowansville
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icone">🕐</div>
+            <div>
+              <strong>Heures d'ouverture</strong>
+              Lun–Ven : 7h00 – 17h00
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="form-card">
+          <h3>📋 Demande de soumission</h3>
+          <form id="form-soumission" action="https://formspree.io/f/xojypaby" method="POST" novalidate>
+
+            <div class="form-row">
+              <div class="form-groupe">
+                <label for="prenom">Prénom <span class="requis">*</span></label>
+                <input type="text" id="prenom" name="prenom" placeholder="Jean" required />
+              </div>
+              <div class="form-groupe">
+                <label for="nom">Nom <span class="requis">*</span></label>
+                <input type="text" id="nom" name="nom" placeholder="Tremblay" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-groupe">
+                <label for="telephone">Téléphone <span class="requis">*</span></label>
+                <input type="tel" id="telephone" name="telephone" placeholder="514-555-1234" required />
+              </div>
+              <div class="form-groupe">
+                <label for="courriel">Courriel</label>
+                <input type="email" id="courriel" name="courriel" placeholder="jean@exemple.com" />
+              </div>
+            </div>
+
+            <div class="form-groupe">
+              <label for="ville">Ville / Municipalité <span class="requis">*</span></label>
+              <select id="ville" name="ville" required>
+                <option value="" disabled selected>-- Sélectionnez votre ville --</option>
+                <option value="bromont">Bromont</option>
+                <option value="sutton">Sutton</option>
+                <option value="knowlton">Knowlton</option>
+                <option value="lac-brome">Lac Brome</option>
+                <option value="shefford">Shefford</option>
+                <option value="cowansville">Cowansville</option>
+                <option value="autre">Autre ville de la région</option>
+              </select>
+            </div>
+
+            <div class="form-groupe">
+              <label for="adresse">Adresse des travaux</label>
+              <input type="text" id="adresse" name="adresse" placeholder="123 rue des Érables" />
+            </div>
+
+            <div class="form-groupe">
+              <label for="service">Type de service <span class="requis">*</span></label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>-- Sélectionnez un service --</option>
+                <option value="excavation">Excavation / Terrassement</option>
+                <option value="drain">Drain français / Drainage</option>
+                <option value="paysager">Aménagement paysager</option>
+                <option value="tourbe">Pose de tourbe / Engazonnement</option>
+                <option value="pave-uni">Pavé uni</option>
+                <option value="dalles">Dalles de béton / Béton estampé</option>
+                <option value="murets">Murets de béton / Mur de soutènement</option>
+                <option value="enrochement">Enrochement</option>
+                <option value="multiple">Plusieurs services</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+
+            <div class="form-groupe">
+              <label for="echeance">Échéance souhaitée</label>
+              <select id="echeance" name="echeance">
+                <option value="" disabled selected>-- Quand souhaitez-vous les travaux? --</option>
+                <option value="urgent">Le plus tôt possible</option>
+                <option value="1mois">Dans le prochain mois</option>
+                <option value="printemps">Au printemps</option>
+                <option value="ete">Cet été</option>
+                <option value="automne">À l'automne</option>
+                <option value="flexible">Date flexible</option>
+              </select>
+            </div>
+
+            <div class="form-groupe">
+              <label for="description">Description du projet <span class="requis">*</span></label>
+              <textarea
+                id="description"
+                name="description"
+                rows="5"
+                placeholder="Décrivez votre projet : type de travaux, superficie approximative, contraintes particulières, etc."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">
+              Envoyer ma demande de soumission
+            </button>
+            <p class="form-note">🔒 Vos informations sont confidentielles et ne seront jamais partagées.</p>
+
+            <div class="msg-succes" id="msg-succes">
+              ✅ Merci ! Votre demande a été reçue. Le Groupe SPB vous contactera dans les 24 heures au numéro ou courriel fourni.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo"><img src="images/logo fond noir.png" alt="Groupe SPB" class="logo-img logo-footer" /></div>
+        <p>Excavation, terrassement, aménagement paysager, dalles de béton, pavé uni et murets de soutènement dans les Cantons-de-l'Est.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="soumission.html">Soumission gratuite</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15147798590">📞 514-779-8590</a></li>
+          <li><a href="mailto:infogroupespb@gmail.com">✉️ infogroupespb@gmail.com</a></li>
+          <li><span>📍 Bromont · Sutton · Knowlton</span></li>
+          <li><span>📍 Lac Brome · Shefford · Cowansville</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Groupe SPB. Tous droits réservés.</span>
+      <span>Cantons-de-l'Est, Québec 🍁</span>
+    </div>
+  </footer>
+
+  <script>
+    // Burger menu
+    document.getElementById('burger').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+
+    // Validation avant soumission Formspree
+    document.getElementById('form-soumission').addEventListener('submit', function (e) {
+      const requis = this.querySelectorAll('[required]');
+      let valide = true;
+
+      requis.forEach(function (champ) {
+        champ.style.borderColor = '';
+        if (!champ.value.trim()) {
+          champ.style.borderColor = '#DC2626';
+          valide = false;
+        }
+      });
+
+      if (!valide) {
+        e.preventDefault();
+        const premier = this.querySelector('[style*="DC2626"]');
+        if (premier) premier.focus();
+      }
+    });
+  </script>
+</body>
+</html>

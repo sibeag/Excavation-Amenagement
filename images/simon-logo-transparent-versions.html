@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Logo Simon - Transparent fond clair</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;900&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #666;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    font-family: sans-serif;
+  }
+  .previews { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+  .preview-box { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .preview-box span { color: #eee; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+  .damier-clair {
+    background: repeating-conic-gradient(#ddd 0% 25%, #bbb 0% 50%) 0 0 / 16px 16px;
+    padding: 12px;
+    border-radius: 4px;
+  }
+  .damier-fonce {
+    background: repeating-conic-gradient(#555 0% 25%, #333 0% 50%) 0 0 / 16px 16px;
+    padding: 12px;
+    border-radius: 4px;
+  }
+
+  .logoWrap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 48px;
+    gap: 10px;
+    min-width: 500px;
+    background: transparent;
+  }
+
+  .bar { display: flex; align-items: center; width: 100%; }
+  .bar-yellow { width: 120px; height: 2.5px; background: #F5C518; border-radius: 2px; flex-shrink: 0; }
+
+  /* FONCÉ — pour fond clair */
+  #logoFonce .bar-side { flex: 1; height: 2.5px; background: #111; border-radius: 2px; }
+  #logoFonce .ligne1 { font-family: 'Barlow Condensed', Arial, sans-serif; font-weight: 900; font-size: 28px; letter-spacing: 4px; color: #111; white-space: nowrap; text-align: center; }
+  #logoFonce .ligne2 { font-family: 'Barlow Condensed', Arial, sans-serif; font-weight: 900; font-size: 46px; letter-spacing: 10px; color: #F5C518; white-space: nowrap; text-align: center; text-indent: 10px; }
+
+  /* CLAIR — pour fond foncé */
+  #logoClair .bar-side { flex: 1; height: 2.5px; background: #fff; border-radius: 2px; }
+  #logoClair .ligne1 { font-family: 'Barlow Condensed', Arial, sans-serif; font-weight: 900; font-size: 28px; letter-spacing: 4px; color: #fff; white-space: nowrap; text-align: center; }
+  #logoClair .ligne2 { font-family: 'Barlow Condensed', Arial, sans-serif; font-weight: 900; font-size: 46px; letter-spacing: 10px; color: #F5C518; white-space: nowrap; text-align: center; text-indent: 10px; }
+
+  .btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  button { border: none; padding: 13px 24px; font-size: 14px; font-weight: 700; cursor: pointer; border-radius: 4px; letter-spacing: 1px; }
+  button.jaune { background: #F5C518; color: #111; }
+  button.jaune:hover { background: #D4A900; }
+  button.dark { background: #111; color: #fff; border: 1px solid #444; }
+  button.dark:hover { background: #222; }
+  p { color: #eee; font-size: 13px; margin: 0; text-align: center; }
+</style>
+</head>
+<body>
+
+<p>Aperçu — damier = transparent</p>
+
+<div class="previews">
+
+  <div class="preview-box">
+    <div class="damier-clair">
+      <div class="logoWrap" id="logoFonce">
+        <div class="bar"><div class="bar-side"></div><div class="bar-yellow"></div><div class="bar-side"></div></div>
+        <div class="ligne1">AMÉNAGEMENT &amp; EXCAVATION</div>
+        <div class="ligne2">SIMON</div>
+        <div class="bar"><div class="bar-side"></div><div class="bar-yellow"></div><div class="bar-side"></div></div>
+      </div>
+    </div>
+    <span>Transparent — pour fond clair (lettres noires)</span>
+  </div>
+
+  <div class="preview-box">
+    <div class="damier-fonce">
+      <div class="logoWrap" id="logoClair">
+        <div class="bar"><div class="bar-side"></div><div class="bar-yellow"></div><div class="bar-side"></div></div>
+        <div class="ligne1">AMÉNAGEMENT &amp; EXCAVATION</div>
+        <div class="ligne2">SIMON</div>
+        <div class="bar"><div class="bar-side"></div><div class="bar-yellow"></div><div class="bar-side"></div></div>
+      </div>
+    </div>
+    <span>Transparent — pour fond foncé (lettres blanches)</span>
+  </div>
+
+</div>
+
+<div class="btns">
+  <button class="jaune" onclick="dl('logoFonce', 'fond-clair-lettres-noires')">⬇ PNG transparent fond clair</button>
+  <button class="dark"  onclick="dl('logoClair', 'fond-fonce-lettres-blanches')">⬇ PNG transparent fond foncé</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+function dl(id, name) {
+  const el = document.getElementById(id);
+  html2canvas(el, {
+    backgroundColor: null,
+    scale: 4,
+    useCORS: true,
+    logging: false
+  }).then(canvas => {
+    const a = document.createElement('a');
+    a.download = 'simon-logo-transparent-' + name + '.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+  });
+}
+</script>
+</body>
+</html>
