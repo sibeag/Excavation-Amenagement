@@ -157,6 +157,14 @@ nav {
   background: #a5722e;
   box-shadow: 0 3px 12px rgba(184,132,58,.45);
 }
+.nav-links .nav-phone a {
+  color: var(--or);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.nav-links .nav-phone a:hover {
+  color: #a5722e;
+}
 
 /* Burger menu mobile */
 .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
