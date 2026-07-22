@@ -410,6 +410,30 @@ nav {
 }
 
 /* ==========================================
+   Galerie (réalisations)
+   ========================================== */
+.galerie { padding-top: 72px; }
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.galerie-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--bordure);
+  aspect-ratio: 4 / 3;
+}
+.galerie-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+.galerie-item:hover img { transform: scale(1.05); }
+
+/* ==========================================
    CTA Banner
    ========================================== */
 .cta-banner {
