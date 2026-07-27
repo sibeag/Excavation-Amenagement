@@ -35,7 +35,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="realisations.html">Réalisations</a></li>
         <li><a href="deneigement.html">Déneigement</a></li>
-        <li class="nav-cta"><a href="soumission.html" class="active">Soumission gratuite</a></li>
+        <li class="nav-cta"><a href="soumission.html" class="active">Soumission</a></li>
         <li class="nav-phone"><a href="tel:+15147798590">📞 514-779-8590</a></li>
       </ul>
     </div>
@@ -96,7 +96,7 @@
         <!-- Formulaire -->
         <div class="form-card">
           <h3>📋 Demande de soumission</h3>
-          <form id="form-soumission" novalidate>
+          <form id="form-soumission" action="https://formspree.io/f/xojypaby" method="POST" novalidate>
 
             <div class="form-row">
               <div class="form-groupe">
@@ -235,10 +235,8 @@
       document.getElementById('nav-links').classList.toggle('open');
     });
 
-    // Validation et envoi du formulaire via le Worker Cloudflare
+    // Validation avant soumission Formspree
     document.getElementById('form-soumission').addEventListener('submit', function (e) {
-      e.preventDefault();
-
       const requis = this.querySelectorAll('[required]');
       let valide = true;
 
@@ -251,36 +249,10 @@
       });
 
       if (!valide) {
+        e.preventDefault();
         const premier = this.querySelector('[style*="DC2626"]');
         if (premier) premier.focus();
-        return;
       }
-
-      const bouton = this.querySelector('.form-submit');
-      const texteOriginal = bouton.textContent;
-      bouton.disabled = true;
-      bouton.textContent = 'Envoi en cours...';
-
-      fetch('/api/soumission', {
-        method: 'POST',
-        body: new FormData(this),
-      })
-        .then(function (reponse) {
-          if (!reponse.ok) throw new Error('Échec de l\'envoi');
-          return reponse.json();
-        })
-        .then((data) => {
-          if (!data.ok) throw new Error(data.error || 'Échec de l\'envoi');
-          document.getElementById('msg-succes').style.display = 'block';
-          this.reset();
-        })
-        .catch(function () {
-          alert('Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous appeler directement au 514-779-8590.');
-        })
-        .finally(function () {
-          bouton.disabled = false;
-          bouton.textContent = texteOriginal;
-        });
     });
   </script>
 </body>
