@@ -115,8 +115,8 @@
                 <input type="tel" id="telephone" name="telephone" placeholder="514-555-1234" required />
               </div>
               <div class="form-groupe">
-                <label for="courriel">Courriel</label>
-                <input type="email" id="courriel" name="courriel" placeholder="jean@exemple.com" />
+                <label for="courriel">Courriel <span class="requis">*</span></label>
+                <input type="email" id="courriel" name="courriel" placeholder="jean@exemple.com" required />
               </div>
             </div>
 
@@ -136,13 +136,13 @@
             </div>
 
             <div class="form-groupe">
-              <label for="adresse">Adresse des travaux</label>
-              <input type="text" id="adresse" name="adresse" placeholder="123 rue des Érables" />
+              <label for="adresse">Adresse des travaux <span class="requis">*</span></label>
+              <input type="text" id="adresse" name="adresse" placeholder="123 rue des Érables" required />
             </div>
 
             <div class="form-groupe">
-              <label for="service">Type de service <span class="requis">*</span></label>
-              <select id="service" name="service" required>
+              <label for="service">Type de service</label>
+              <select id="service" name="service">
                 <option value="" disabled selected>-- Sélectionnez un service --</option>
                 <option value="excavation">Excavation / Terrassement</option>
                 <option value="drain">Drain français / Drainage</option>
@@ -171,13 +171,12 @@
             </div>
 
             <div class="form-groupe">
-              <label for="description">Description du projet <span class="requis">*</span></label>
+              <label for="description">Description du projet</label>
               <textarea
                 id="description"
                 name="description"
                 rows="5"
                 placeholder="Décrivez votre projet : type de travaux, superficie approximative, contraintes particulières, etc."
-                required
               ></textarea>
             </div>
 
