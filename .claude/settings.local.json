@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "WebFetch(domain:www.groupeext.com)"
+      "WebFetch(domain:www.groupeext.com)",
+      "Bash(git push *)",
+      "Bash(curl -s -o /dev/null -w \"root: %{http_code}\\\\n\" \"https://sibeag.github.io/\")",
+      "Bash(git ls-remote *)",
+      "Bash(git ls-tree *)"
     ]
   }
 }

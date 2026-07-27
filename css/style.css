@@ -350,6 +350,12 @@ nav {
 }
 .page-hero p { color: rgba(255,255,255,.78); font-size: 1.15rem; line-height: 1.7; }
 
+.page-hero-image {
+  background-image: linear-gradient(150deg, rgba(20,40,32,.88) 0%, rgba(31,66,51,.82) 100%), url('images/background/realisations-hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 .service-bloc { padding: 72px 0; }
 .service-bloc:nth-child(even) { background: var(--gris-clair); }
 .service-bloc + .service-bloc { border-top: 1px solid var(--bordure); }
@@ -419,19 +425,81 @@ nav {
   gap: 20px;
 }
 .galerie-item {
+  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--bordure);
   aspect-ratio: 4 / 3;
+  cursor: pointer;
+  transition: box-shadow .25s ease;
 }
+.galerie-item:hover { box-shadow: var(--shadow); }
 .galerie-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+.galerie-item:hover img { transform: scale(1.06); }
+
+.galerie-caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 30px 16px 12px;
+  background: linear-gradient(to top, rgba(15,31,26,.88), rgba(15,31,26,0));
+  color: var(--blanc);
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .2px;
+  transform: translateY(100%);
   transition: transform .3s ease;
 }
-.galerie-item:hover img { transform: scale(1.05); }
+.galerie-item:hover .galerie-caption,
+.galerie-item:focus-visible .galerie-caption { transform: translateY(0); }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15,31,26,.94);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+}
+.lightbox.open { display: flex; }
+.lightbox-content {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 78vh;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: contain;
+}
+.lightbox-caption { color: rgba(255,255,255,.85); font-size: .95rem; text-align: center; }
+.lightbox-close {
+  position: absolute;
+  top: 20px; right: 28px;
+  color: var(--blanc);
+  font-size: 2.4rem;
+  line-height: 1;
+  cursor: pointer;
+  background: none;
+  border: none;
+  opacity: .8;
+  transition: opacity .18s;
+}
+.lightbox-close:hover { opacity: 1; }
 
 /* ==========================================
    CTA Banner
@@ -659,6 +727,19 @@ footer {
   flex-wrap: wrap;
   gap: 8px;
 }
+
+/* ==========================================
+   Thème Bleu (page Déneigement)
+   ========================================== */
+body.theme-bleu {
+  --vert:        #12283F;
+  --vert-clair:  #1F5C99;
+  --vert-accent: #3D9BE8;
+}
+body.theme-bleu nav { background: #2E6DA6; }
+body.theme-bleu .btn-primary { box-shadow: 0 2px 8px rgba(31,92,153,.3); }
+body.theme-bleu .btn-primary:hover { box-shadow: 0 4px 16px rgba(31,92,153,.4); }
+body.theme-bleu .service-liste li::before { box-shadow: 0 0 0 2px rgba(61,155,232,.2); }
 
 /* ==========================================
    Responsive

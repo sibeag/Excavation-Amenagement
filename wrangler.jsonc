@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "espacesb",
+  "main": "worker.js",
+  "compatibility_date": "2026-05-08",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+  "send_email": [
+    {
+      "name": "SEB_MAIL",
+      "destination_address": "simonbeaudet@yahoo.ca"
+    }
+  ]
+}
