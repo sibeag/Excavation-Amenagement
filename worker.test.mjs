@@ -10,7 +10,7 @@ const ENV = {
   },
   RESEND_API_KEY: "re_test_key",
   RESEND_FROM_EMAIL: "Espace SB <soumission@espacesb.com>",
-  RESEND_TO_EMAIL: "simon@example.com",
+  RESEND_TO_EMAIL: "p@example.com, simon@example.com",
   GOOGLE_ADS_CONVERSION_TARGET:
     "AW-18139948408/JFtbCMih59gcEPjK5slD",
 };
@@ -93,7 +93,7 @@ test("envoie une soumission valide à Resend et retourne la conversion", async (
     `soumission-${SOUMISSION_VALIDE.submissionId}`,
   );
   assert.equal(optionsResend.headers.Authorization, "Bearer re_test_key");
-  assert.deepEqual(courriel.to, ["simon@example.com"]);
+  assert.deepEqual(courriel.to, ["p@example.com", "simon@example.com"]);
   assert.equal(courriel.reply_to, "jean@example.com");
   assert.match(courriel.subject, /Jean Tremblay \(Bromont\)/);
   assert.match(courriel.html, /Nivellement du terrain arrière/);

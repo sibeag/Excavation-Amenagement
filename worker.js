@@ -129,7 +129,8 @@ async function handleSoumission(request, env, entetesCors) {
     return repondre({ ok: false, error: erreur }, 400);
   }
 
-  if (!env.RESEND_API_KEY || !env.RESEND_FROM_EMAIL || !env.RESEND_TO_EMAIL) {
+  const destinataires = extraireDestinataires(env.RESEND_TO_EMAIL);
+  if (!env.RESEND_API_KEY || !env.RESEND_FROM_EMAIL || destinataires.length === 0) {
     return repondre(
       {
         ok: false,
@@ -145,7 +146,7 @@ async function handleSoumission(request, env, entetesCors) {
 
   const courriel = {
     from: env.RESEND_FROM_EMAIL,
-    to: [env.RESEND_TO_EMAIL],
+    to: destinataires,
     reply_to: soumission.courriel,
     subject: `Nouvelle soumission — ${soumission.prenom} ${soumission.nom} (${ville})`,
     text: creerVersionTexte(soumission, { ville, service, echeance }),
@@ -185,6 +186,17 @@ async function handleSoumission(request, env, entetesCors) {
       ? env.GOOGLE_ADS_CONVERSION_TARGET
       : null,
   });
+}
+
+function extraireDestinataires(valeur) {
+  return [
+    ...new Set(
+      String(valeur || "")
+        .split(",")
+        .map((courriel) => courriel.trim())
+        .filter(Boolean),
+    ),
+  ];
 }
 
 function creerEntetesCors(request, env) {
