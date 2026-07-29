@@ -1,22 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "espacesb",
-  "compatibility_date": "2026-07-22",
-  "main": "worker.js",
+  "name": "simonamenagement",
+  "pages_build_output_dir": ".",
+  "compatibility_date": "2026-07-29",
   "compatibility_flags": ["nodejs_compat"],
-  "observability": {
-    "enabled": true
-  },
-  "assets": {
-    "directory": "."
-  },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
-    "directory": ".",
-    "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
-  },
   "vars": {
     "RESEND_FROM_EMAIL": "Espace SB <espacesb@militime.ai>",
     "RESEND_TO_EMAIL": "p@pasquin.ca",

@@ -39,38 +39,42 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/soumission") {
-      const entetesCors = creerEntetesCors(request, env);
-
-      if (!entetesCors) {
-        return jsonResponse({ ok: false, error: "Origine non permise." }, 403);
-      }
-
-      if (request.method === "OPTIONS") {
-        return new Response(null, {
-          status: 204,
-          headers: {
-            ...entetesCors,
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Methods": "POST, OPTIONS",
-            "Access-Control-Max-Age": "86400",
-          },
-        });
-      }
-
-      if (request.method !== "POST") {
-        return jsonResponse(
-          { ok: false, error: "Méthode non permise." },
-          405,
-          { ...entetesCors, Allow: "POST, OPTIONS" },
-        );
-      }
-
-      return handleSoumission(request, env, entetesCors);
+      return handleSoumissionRequest(request, env);
     }
 
     return env.ASSETS.fetch(request);
   },
 };
+
+export async function handleSoumissionRequest(request, env) {
+  const entetesCors = creerEntetesCors(request, env);
+
+  if (!entetesCors) {
+    return jsonResponse({ ok: false, error: "Origine non permise." }, 403);
+  }
+
+  if (request.method === "OPTIONS") {
+    return new Response(null, {
+      status: 204,
+      headers: {
+        ...entetesCors,
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Max-Age": "86400",
+      },
+    });
+  }
+
+  if (request.method !== "POST") {
+    return jsonResponse(
+      { ok: false, error: "Méthode non permise." },
+      405,
+      { ...entetesCors, Allow: "POST, OPTIONS" },
+    );
+  }
+
+  return handleSoumission(request, env, entetesCors);
+}
 
 async function handleSoumission(request, env, entetesCors) {
   const repondre = (body, status = 200, headers = {}) =>

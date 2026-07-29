@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
+import { onRequest as onRequestSoumission } from "./functions/api/soumission.js";
 import worker from "./worker.js";
 
 const ENV = {
@@ -38,6 +39,23 @@ function creerRequete(payload = SOUMISSION_VALIDE, options = {}) {
     body: JSON.stringify(payload),
   });
 }
+
+test("expose la soumission sur la route Cloudflare Pages", async (t) => {
+  const fetchOriginal = globalThis.fetch;
+  t.after(() => {
+    globalThis.fetch = fetchOriginal;
+  });
+
+  globalThis.fetch = async () => Response.json({ id: "email_pages_123" });
+
+  const reponse = await onRequestSoumission({
+    request: creerRequete(),
+    env: ENV,
+  });
+
+  assert.equal(reponse.status, 200);
+  assert.equal((await reponse.json()).accepted, true);
+});
 
 test("envoie une soumission valide à Resend et retourne la conversion", async (t) => {
   const fetchOriginal = globalThis.fetch;

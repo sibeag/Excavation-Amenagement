@@ -3,7 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npx --yes wrangler dev --persist-to /tmp/ensemblesb-wrangler-state",
+    "dev": "wrangler pages dev . --persist-to /tmp/ensemblesb-wrangler-state",
     "test": "node --test worker.test.mjs analytics.test.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.115.0"
   }
 }
