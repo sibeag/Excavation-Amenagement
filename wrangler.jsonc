@@ -6,7 +6,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "vars": {
     "RESEND_FROM_EMAIL": "Espace SB <espacesb@militime.ai>",
-    "RESEND_TO_EMAIL": "p@pasquin.ca",
+    "RESEND_TO_EMAIL": "p@pasquin.ca,simonbeaudet@yahoo.ca",
     "FORM_ALLOWED_ORIGINS": "https://www.espacesb.com",
     "GOOGLE_ADS_CONVERSION_TARGET": "AW-18139948408/JFtbCMih59gcEPjK5slD"
   }

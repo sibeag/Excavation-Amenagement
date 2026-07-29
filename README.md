@@ -24,7 +24,7 @@ continu des ressources du site.
 Les variables publiques se trouvent dans `wrangler.jsonc` :
 
 - `RESEND_FROM_EMAIL` : expéditeur utilisant un domaine vérifié dans Resend;
-- `RESEND_TO_EMAIL` : destinataire interne des demandes;
+- `RESEND_TO_EMAIL` : un ou plusieurs destinataires internes, séparés par des virgules;
 - `FORM_ALLOWED_ORIGINS` : origines web supplémentaires autorisées à appeler
   l’API, séparées par des virgules (l’origine du Worker est toujours autorisée);
 - `GOOGLE_ADS_CONVERSION_TARGET` : identifiant complet de l’action de
