@@ -7,17 +7,19 @@
   <meta name="description" content="Demandez une soumission gratuite pour vos travaux d'aménagement paysager, d'excavation, de terrassement, pavé uni ou murets de soutènement." />
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18139948408"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18139948408');
+  </script>
+  <script src="js/analytics.js" defer></script>
+  <script src="js/soumission.js" defer></script>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18139948408"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18139948408');
-</script>
 
 <body>
 
@@ -27,15 +29,16 @@
       <a href="index.html" class="nav-logo">
         <img src="images/logo.png" alt="Espace SB" class="logo-img" />
       </a>
-      <button class="burger" id="burger" aria-label="Menu">
+      <button class="burger" id="burger" aria-label="Menu" aria-controls="nav-links" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="realisations.html">Réalisations</a></li>
-        <li class="nav-cta"><a href="soumission.html" class="active">Soumission gratuite</a></li>
-        <li class="nav-phone"><a href="tel:+15147798590">📞 514-779-8590</a></li>
+        <li><a href="deneigement.html">Déneigement</a></li>
+        <li class="nav-cta"><a href="soumission.html" class="active">Soumission</a></li>
+        <li class="nav-phone"><a href="tel:+15147798590" data-phone-location="navigation">📞 514-779-8590</a></li>
       </ul>
     </div>
   </nav>
@@ -62,7 +65,7 @@
             <div class="contact-icone">📞</div>
             <div>
               <strong>Téléphone</strong>
-              <a href="tel:+15147798590">514-779-8590</a>
+              <a href="tel:+15147798590" data-phone-location="contact-panel">514-779-8590</a>
             </div>
           </div>
 
@@ -94,100 +97,145 @@
 
         <!-- Formulaire -->
         <div class="form-card">
-          <h3>📋 Demande de soumission</h3>
-          <form id="form-soumission" action="https://formspree.io/f/xojypaby" method="POST" novalidate>
+          <div class="form-card-entete">
+            <p class="form-kicker">Soumission gratuite · Sans engagement</p>
+            <h2>Décrivez-nous votre projet</h2>
+            <p>Les champs marqués d’un astérisque sont requis.</p>
+          </div>
 
-            <div class="form-row">
-              <div class="form-groupe">
-                <label for="prenom">Prénom <span class="requis">*</span></label>
-                <input type="text" id="prenom" name="prenom" placeholder="Jean" required />
+          <form
+            id="form-soumission"
+            action="/api/soumission"
+            method="POST"
+            data-local-api-url="http://127.0.0.1:8787/api/soumission"
+          >
+            <fieldset class="form-etape">
+              <legend>
+                <span class="form-etape-numero">1</span>
+                <span>Vos coordonnées</span>
+              </legend>
+
+              <div class="form-row">
+                <div class="form-groupe">
+                  <label for="prenom">Prénom <span class="requis" aria-hidden="true">*</span></label>
+                  <input type="text" id="prenom" name="prenom" autocomplete="given-name" maxlength="80" placeholder="Jean" required />
+                </div>
+                <div class="form-groupe">
+                  <label for="nom">Nom <span class="requis" aria-hidden="true">*</span></label>
+                  <input type="text" id="nom" name="nom" autocomplete="family-name" maxlength="80" placeholder="Tremblay" required />
+                </div>
               </div>
-              <div class="form-groupe">
-                <label for="nom">Nom <span class="requis">*</span></label>
-                <input type="text" id="nom" name="nom" placeholder="Tremblay" required />
+
+              <div class="form-row">
+                <div class="form-groupe">
+                  <label for="telephone">Téléphone <span class="requis" aria-hidden="true">*</span></label>
+                  <input type="tel" id="telephone" name="telephone" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="514-555-1234" required />
+                </div>
+                <div class="form-groupe">
+                  <label for="courriel">Courriel <span class="requis" aria-hidden="true">*</span></label>
+                  <input type="email" id="courriel" name="courriel" autocomplete="email" inputmode="email" maxlength="254" placeholder="jean@exemple.com" required />
+                </div>
               </div>
-            </div>
+            </fieldset>
 
-            <div class="form-row">
+            <fieldset class="form-etape">
+              <legend>
+                <span class="form-etape-numero">2</span>
+                <span>Lieu des travaux</span>
+              </legend>
+
               <div class="form-groupe">
-                <label for="telephone">Téléphone <span class="requis">*</span></label>
-                <input type="tel" id="telephone" name="telephone" placeholder="514-555-1234" required />
+                <label for="ville">Ville / Municipalité <span class="requis" aria-hidden="true">*</span></label>
+                <select id="ville" name="ville" autocomplete="address-level2" required>
+                  <option value="" disabled selected>Sélectionnez votre ville</option>
+                  <option value="bromont">Bromont</option>
+                  <option value="granby">Granby</option>
+                  <option value="sutton">Sutton</option>
+                  <option value="knowlton">Knowlton</option>
+                  <option value="lac-brome">Lac Brome</option>
+                  <option value="shefford">Shefford</option>
+                  <option value="cowansville">Cowansville</option>
+                  <option value="autre">Autre ville de la région</option>
+                </select>
               </div>
+
               <div class="form-groupe">
-                <label for="courriel">Courriel</label>
-                <input type="email" id="courriel" name="courriel" placeholder="jean@exemple.com" />
+                <label for="adresse">Adresse des travaux <span class="requis" aria-hidden="true">*</span></label>
+                <input type="text" id="adresse" name="adresse" autocomplete="street-address" maxlength="180" placeholder="123, rue des Érables" required />
               </div>
+            </fieldset>
+
+            <fieldset class="form-etape">
+              <legend>
+                <span class="form-etape-numero">3</span>
+                <span>Votre projet</span>
+              </legend>
+
+              <div class="form-row">
+                <div class="form-groupe">
+                  <label for="service">Type de service <span class="facultatif">Facultatif</span></label>
+                  <select id="service" name="service">
+                    <option value="" selected>Sélectionnez un service</option>
+                    <option value="excavation">Excavation / Terrassement</option>
+                    <option value="drain">Drain français / Drainage</option>
+                    <option value="paysager">Aménagement paysager</option>
+                    <option value="tourbe">Pose de tourbe / Engazonnement</option>
+                    <option value="pave-uni">Pavé uni</option>
+                    <option value="dalles">Dalles de béton / Béton estampé</option>
+                    <option value="murets">Murets de béton / Mur de soutènement</option>
+                    <option value="enrochement">Enrochement</option>
+                    <option value="multiple">Plusieurs services</option>
+                    <option value="autre">Autre</option>
+                  </select>
+                </div>
+
+                <div class="form-groupe">
+                  <label for="echeance">Échéance souhaitée <span class="facultatif">Facultatif</span></label>
+                  <select id="echeance" name="echeance">
+                    <option value="" selected>Sélectionnez une échéance</option>
+                    <option value="urgent">Le plus tôt possible</option>
+                    <option value="1mois">Dans le prochain mois</option>
+                    <option value="printemps">Au printemps</option>
+                    <option value="ete">Cet été</option>
+                    <option value="automne">À l'automne</option>
+                    <option value="flexible">Date flexible</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-groupe">
+                <label for="description">Description du projet <span class="facultatif">Facultatif</span></label>
+                <textarea
+                  id="description"
+                  name="description"
+                  rows="5"
+                  maxlength="3000"
+                  placeholder="Type de travaux, superficie approximative, accès au terrain ou toute autre information utile."
+                ></textarea>
+              </div>
+            </fieldset>
+
+            <div class="form-piege" aria-hidden="true">
+              <label for="siteweb">Laissez ce champ vide</label>
+              <input type="text" id="siteweb" name="siteweb" tabindex="-1" autocomplete="off" />
             </div>
 
-            <div class="form-groupe">
-              <label for="ville">Ville / Municipalité <span class="requis">*</span></label>
-              <select id="ville" name="ville" required>
-                <option value="" disabled selected>-- Sélectionnez votre ville --</option>
-                <option value="bromont">Bromont</option>
-                <option value="granby">Granby</option>
-                <option value="sutton">Sutton</option>
-                <option value="knowlton">Knowlton</option>
-                <option value="lac-brome">Lac Brome</option>
-                <option value="shefford">Shefford</option>
-                <option value="cowansville">Cowansville</option>
-                <option value="autre">Autre ville de la région</option>
-              </select>
-            </div>
-
-            <div class="form-groupe">
-              <label for="adresse">Adresse des travaux</label>
-              <input type="text" id="adresse" name="adresse" placeholder="123 rue des Érables" />
-            </div>
-
-            <div class="form-groupe">
-              <label for="service">Type de service <span class="requis">*</span></label>
-              <select id="service" name="service" required>
-                <option value="" disabled selected>-- Sélectionnez un service --</option>
-                <option value="excavation">Excavation / Terrassement</option>
-                <option value="drain">Drain français / Drainage</option>
-                <option value="paysager">Aménagement paysager</option>
-                <option value="tourbe">Pose de tourbe / Engazonnement</option>
-                <option value="pave-uni">Pavé uni</option>
-                <option value="dalles">Dalles de béton / Béton estampé</option>
-                <option value="murets">Murets de béton / Mur de soutènement</option>
-                <option value="enrochement">Enrochement</option>
-                <option value="multiple">Plusieurs services</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
-
-            <div class="form-groupe">
-              <label for="echeance">Échéance souhaitée</label>
-              <select id="echeance" name="echeance">
-                <option value="" disabled selected>-- Quand souhaitez-vous les travaux? --</option>
-                <option value="urgent">Le plus tôt possible</option>
-                <option value="1mois">Dans le prochain mois</option>
-                <option value="printemps">Au printemps</option>
-                <option value="ete">Cet été</option>
-                <option value="automne">À l'automne</option>
-                <option value="flexible">Date flexible</option>
-              </select>
-            </div>
-
-            <div class="form-groupe">
-              <label for="description">Description du projet <span class="requis">*</span></label>
-              <textarea
-                id="description"
-                name="description"
-                rows="5"
-                placeholder="Décrivez votre projet : type de travaux, superficie approximative, contraintes particulières, etc."
-                required
-              ></textarea>
-            </div>
+            <input type="hidden" id="submission-id" name="submissionId" />
 
             <button type="submit" class="btn btn-primary form-submit">
-              Envoyer ma demande de soumission
+              <span class="form-submit-texte">Envoyer ma demande</span>
+              <span class="form-submit-chargement" hidden>Envoi en cours…</span>
             </button>
-            <p class="form-note">🔒 Vos informations sont confidentielles et ne seront jamais partagées.</p>
 
-            <div class="msg-succes" id="msg-succes">
-              ✅ Merci ! Votre demande a été reçue. Espace SB vous contactera dans les 24 heures au numéro ou courriel fourni.
-            </div>
+            <p class="form-note">
+              Vos renseignements servent uniquement à préparer votre soumission.
+            </p>
+
+            <div class="form-message" id="form-message" role="status" aria-live="polite" tabindex="-1" hidden></div>
+
+            <noscript>
+              <p class="form-message form-message-erreur">JavaScript doit être activé pour envoyer la demande. Vous pouvez aussi nous appeler au 514-779-8590.</p>
+            </noscript>
           </form>
         </div>
 
@@ -208,13 +256,14 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="deneigement.html">Déneigement</a></li>
           <li><a href="soumission.html">Soumission gratuite</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:+15147798590">📞 514-779-8590</a></li>
+          <li><a href="tel:+15147798590" data-phone-location="footer">📞 514-779-8590</a></li>
           <li><a href="mailto:simonbeaudet@yahoo.ca">✉️ simonbeaudet@yahoo.ca</a></li>
           <li><span>📍 Bromont · Granby · Sutton · Knowlton</span></li>
           <li><span>📍 Lac Brome · Shefford · Cowansville</span></li>
@@ -227,31 +276,5 @@
     </div>
   </footer>
 
-  <script>
-    // Burger menu
-    document.getElementById('burger').addEventListener('click', function () {
-      document.getElementById('nav-links').classList.toggle('open');
-    });
-
-    // Validation avant soumission Formspree
-    document.getElementById('form-soumission').addEventListener('submit', function (e) {
-      const requis = this.querySelectorAll('[required]');
-      let valide = true;
-
-      requis.forEach(function (champ) {
-        champ.style.borderColor = '';
-        if (!champ.value.trim()) {
-          champ.style.borderColor = '#DC2626';
-          valide = false;
-        }
-      });
-
-      if (!valide) {
-        e.preventDefault();
-        const premier = this.querySelector('[style*="DC2626"]');
-        if (premier) premier.focus();
-      }
-    });
-  </script>
 </body>
 </html>

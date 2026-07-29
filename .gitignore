@@ -4,3 +4,9 @@
 !.dev.vars.example
 .env*
 !.env.example
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+.env.vars
+.wrangler/

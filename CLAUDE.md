@@ -18,8 +18,10 @@ Static website (HTML/CSS/JS — no build tools, no framework) for **Groupe SPB**
 |------|------|
 | `index.html` | Home page — hero, intro, service preview cards, CTA |
 | `services.html` | Full services page — one detailed bloc per service |
-| `soumission.html` | Quote request form with client-side validation |
+| `soumission.html` | Custom quote request form |
 | `css/style.css` | Single stylesheet shared by all three pages |
+| `js/soumission.js` | Form validation, submission state, and Google Ads conversion event |
+| `worker.js` | Static asset server and Resend-backed quote API |
 
 ## Development
 
@@ -37,7 +39,13 @@ python -m http.server 8080  # Python
 
 **Navigation** is duplicated in all three pages — update it in all files when adding pages. The current page gets `class="active"` on its `<a>` link.
 
-**Form (`soumission.html`)** performs client-side validation only. To wire up real email delivery, integrate [Formspree](https://formspree.io): add `action="https://formspree.io/f/YOUR_ID"` to the `<form>` tag and remove the `e.preventDefault()` call in the submit handler.
+**Form (`soumission.html`)** posts JSON to `/api/soumission`. The Worker validates
+the request and sends the lead through Resend. It returns the configured Google
+Ads conversion target only after Resend accepts the email; the browser then
+fires the conversion event with the submission UUID as its transaction ID.
+
+Keep `RESEND_API_KEY` in a Cloudflare secret or local `.dev.vars`, never in the
+repository. The sender domain must be verified in Resend.
 
 ## Services offered (industry terminology)
 
