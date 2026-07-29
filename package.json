@@ -1,0 +1,9 @@
+{
+  "name": "espace-sb-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes wrangler dev --persist-to /tmp/ensemblesb-wrangler-state",
+    "test": "node --test worker.test.mjs analytics.test.mjs"
+  }
+}

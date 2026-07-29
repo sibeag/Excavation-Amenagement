@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "espacesb",
+  "name": "ensemblesb",
   "main": "worker.js",
   "compatibility_date": "2026-05-08",
   "compatibility_flags": ["nodejs_compat"],
@@ -9,12 +9,13 @@
   },
   "assets": {
     "directory": ".",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
   },
-  "send_email": [
-    {
-      "name": "SEB_MAIL",
-      "destination_address": "simonbeaudet@yahoo.ca"
-    }
-  ]
+  "vars": {
+    "RESEND_FROM_EMAIL": "Espace SB <espacesb@militime.ai>",
+    "RESEND_TO_EMAIL": "p@pasquin.ca",
+    "FORM_ALLOWED_ORIGINS": "https://www.espacesb.com",
+    "GOOGLE_ADS_CONVERSION_TARGET": "AW-18139948408/JFtbCMih59gcEPjK5slD"
+  }
 }
