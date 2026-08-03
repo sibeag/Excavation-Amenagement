@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parlez-nous de votre projet — Espace SB</title>
+  <meta name="description" content="Parlez-nous de votre projet d'aménagement paysager, d'excavation, de terrassement, pavé uni, murets de soutènement ou déneigement." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+  <link rel="stylesheet" href="../css/landing-ads.css" />
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18139948408"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18139948408');
+</script>
+
+<body class="lp">
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="lp-nav">
+    <div class="lp-nav-inner">
+      <a href="index.html" class="lp-logo">
+        <img src="../images/logo fond noir.png" alt="Espace SB" />
+      </a>
+      <button class="lp-burger" id="lp-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="lp-nav-links" id="lp-nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="lp-nav-dropdown">
+          <a href="#" class="lp-nav-dropdown-toggle">Services</a>
+          <ul class="lp-nav-dropdown-menu">
+            <li><a href="amenagement-paysager.html">Aménagement Paysager</a></li>
+            <li><a href="nivellement-drainage.html">Nivellement & Drainage</a></li>
+            <li><a href="excavation-soutenement.html">Excavation & Soutènement</a></li>
+            <li><a href="pave-uni-dalles.html">Pavé Uni & Dalles</a></li>
+          </ul>
+        </li>
+        <li><a href="deneigement.html">Déneigement</a></li>
+      </ul>
+      <div class="lp-nav-cta">
+        <a href="tel:+15147798590" class="lp-tel">📞 514-779-8590</a>
+        <a href="soumission.html" class="lp-btn lp-btn-or">Votre projet</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="lp-page-hero">
+    <div class="lp-container">
+      <h1>Parlez-nous de votre projet</h1>
+      <p>Remplissez le formulaire ci-dessous et nous vous contacterons dans les 24 heures.</p>
+    </div>
+  </section>
+
+  <!-- ========== FORMULAIRE ========== -->
+  <section class="lp-section">
+    <div class="lp-container lp-form-page-grid">
+
+      <!-- Infos de contact -->
+      <div class="lp-form-info">
+        <h2>Parlons de votre projet</h2>
+        <p>Notre équipe analyse votre demande et vous propose une réponse détaillée pour votre projet, gratuite et sans engagement. Nous desservons Bromont, Granby, Sutton, Knowlton, Lac Brome, Shefford et Cowansville.</p>
+
+        <div class="lp-contact-item">
+          <div class="lp-contact-icone">📞</div>
+          <div>
+            <strong>Téléphone</strong>
+            <a href="tel:+15147798590">514-779-8590</a>
+          </div>
+        </div>
+
+        <div class="lp-contact-item">
+          <div class="lp-contact-icone">✉️</div>
+          <div>
+            <strong>Courriel</strong>
+            <a href="mailto:simonbeaudet@yahoo.ca">simonbeaudet@yahoo.ca</a>
+          </div>
+        </div>
+
+        <div class="lp-contact-item">
+          <div class="lp-contact-icone">📍</div>
+          <div>
+            <strong>Régions desservies</strong>
+            <span>Bromont, Granby, Sutton, Knowlton, Lac Brome, Shefford, Cowansville</span>
+          </div>
+        </div>
+
+        <div class="lp-contact-item">
+          <div class="lp-contact-icone">🕐</div>
+          <div>
+            <strong>Heures d'ouverture</strong>
+            <span>Lun–Ven : 7h00 – 17h00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="lp-form-page-card">
+        <h3>📋 Votre projet</h3>
+        <form id="lp-form-soumission" action="https://formspree.io/f/xojypaby" method="POST" novalidate>
+
+          <div class="lp-form-row">
+            <div class="lp-champ">
+              <label for="prenom">Prénom <span class="lp-requis">*</span></label>
+              <input type="text" id="prenom" name="prenom" placeholder="Jean" required />
+            </div>
+            <div class="lp-champ">
+              <label for="nom">Nom <span class="lp-requis">*</span></label>
+              <input type="text" id="nom" name="nom" placeholder="Tremblay" required />
+            </div>
+          </div>
+
+          <div class="lp-form-row">
+            <div class="lp-champ">
+              <label for="telephone">Téléphone <span class="lp-requis">*</span></label>
+              <input type="tel" id="telephone" name="telephone" placeholder="514-555-1234" required />
+            </div>
+            <div class="lp-champ">
+              <label for="courriel">Courriel <span class="lp-requis">*</span></label>
+              <input type="email" id="courriel" name="courriel" placeholder="jean@exemple.com" required />
+            </div>
+          </div>
+
+          <div class="lp-champ">
+            <label for="ville">Ville / Municipalité <span class="lp-requis">*</span></label>
+            <select id="ville" name="ville" required>
+              <option value="" disabled selected>-- Sélectionnez votre ville --</option>
+              <option value="bromont">Bromont</option>
+              <option value="granby">Granby</option>
+              <option value="sutton">Sutton</option>
+              <option value="knowlton">Knowlton</option>
+              <option value="lac-brome">Lac Brome</option>
+              <option value="shefford">Shefford</option>
+              <option value="cowansville">Cowansville</option>
+              <option value="autre">Autre ville de la région</option>
+            </select>
+          </div>
+
+          <div class="lp-champ">
+            <label for="adresse">Adresse des travaux <span class="lp-requis">*</span></label>
+            <input type="text" id="adresse" name="adresse" placeholder="123 rue des Érables" required />
+          </div>
+
+          <div class="lp-champ">
+            <label for="service">Type de service</label>
+            <select id="service" name="service">
+              <option value="" disabled selected>-- Sélectionnez un service --</option>
+              <option value="excavation">Excavation / Terrassement</option>
+              <option value="drain">Drain français / Drainage</option>
+              <option value="paysager">Aménagement paysager</option>
+              <option value="tourbe">Pose de tourbe / Engazonnement</option>
+              <option value="pave-uni">Pavé uni</option>
+              <option value="dalles">Dalles de béton / Béton estampé</option>
+              <option value="murets">Murets de béton / Mur de soutènement</option>
+              <option value="deneigement">Déneigement</option>
+              <option value="multiple">Plusieurs services</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="lp-champ">
+            <label for="echeance">Échéance souhaitée</label>
+            <select id="echeance" name="echeance">
+              <option value="" disabled selected>-- Quand souhaitez-vous les travaux? --</option>
+              <option value="urgent">Le plus tôt possible</option>
+              <option value="1mois">Dans le prochain mois</option>
+              <option value="printemps">Au printemps</option>
+              <option value="ete">Cet été</option>
+              <option value="automne">À l'automne</option>
+              <option value="flexible">Date flexible</option>
+            </select>
+          </div>
+
+          <div class="lp-champ">
+            <label for="description">Description du projet</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="5"
+              placeholder="Décrivez votre projet : type de travaux, superficie approximative, contraintes particulières, etc."
+              style="padding:12px 14px; border:1.5px solid var(--bordure); border-radius:var(--radius-sm); font-family:inherit; font-size:.95rem; resize:vertical; background:var(--creme); color:var(--nuit);"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="lp-btn lp-btn-or lp-form-submit">Envoyer ma demande</button>
+          <p class="lp-form-note">🔒 Vos informations sont confidentielles et ne seront jamais partagées.</p>
+
+          <div class="lp-msg-succes" id="lp-msg-succes">
+            ✅ Merci ! Votre demande a été reçue. Espace SB vous contactera dans les 24 heures.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="lp-footer-full">
+    <div class="lp-footer-inner">
+      <div>
+        <div style="margin-bottom:12px;"><img src="../images/logo fond noir.png" alt="Espace SB" style="height:56px;" /></div>
+        <p>Aménagement paysager, nivellement, excavation, soutènement, pavé uni, dalles de béton et déneigement dans les Cantons-de-l'Est.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="amenagement-paysager.html">Aménagement Paysager</a></li>
+          <li><a href="nivellement-drainage.html">Nivellement & Drainage</a></li>
+          <li><a href="excavation-soutenement.html">Excavation & Soutènement</a></li>
+          <li><a href="pave-uni-dalles.html">Pavé Uni & Dalles</a></li>
+          <li><a href="deneigement.html">Déneigement</a></li>
+          <li><a href="soumission.html">Votre projet</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15147798590">📞 514-779-8590</a></li>
+          <li><a href="mailto:simonbeaudet@yahoo.ca">✉️ simonbeaudet@yahoo.ca</a></li>
+          <li><span>📍 Bromont · Granby · Sutton · Knowlton</span></li>
+          <li><span>📍 Lac Brome · Shefford · Cowansville</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="lp-footer-bottom">
+      <span>© 2025 Espace SB. Tous droits réservés.</span>
+      <span>Cantons-de-l'Est, Québec 🍁</span>
+    </div>
+  </footer>
+
+  <div class="lp-mobile-bar">
+    <a href="tel:+15147798590">📞 Appeler maintenant — 514-779-8590</a>
+  </div>
+
+  <script>
+    document.getElementById('lp-burger').addEventListener('click', function () {
+      document.getElementById('lp-nav-links').classList.toggle('lp-open');
+    });
+
+    document.querySelectorAll('.lp-nav-dropdown-toggle').forEach(function (toggle) {
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        var parent = toggle.closest('.lp-nav-dropdown');
+        var isOpen = parent.classList.contains('lp-open');
+        document.querySelectorAll('.lp-nav-dropdown.lp-open').forEach(function (d) { d.classList.remove('lp-open'); });
+        if (!isOpen) parent.classList.add('lp-open');
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.lp-nav-dropdown')) {
+        document.querySelectorAll('.lp-nav-dropdown.lp-open').forEach(function (d) { d.classList.remove('lp-open'); });
+      }
+    });
+
+    document.getElementById('lp-form-soumission').addEventListener('submit', function (e) {
+      const requis = this.querySelectorAll('[required]');
+      let valide = true;
+
+      requis.forEach(function (champ) {
+        champ.style.borderColor = '';
+        if (!champ.value.trim()) {
+          champ.style.borderColor = '#DC2626';
+          valide = false;
+        }
+      });
+
+      if (!valide) {
+        e.preventDefault();
+        const premier = this.querySelector('[style*="DC2626"]');
+        if (premier) premier.focus();
+      }
+    });
+  </script>
+</body>
+</html>

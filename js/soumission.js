@@ -12,6 +12,21 @@ burger?.addEventListener("click", () => {
   burger.setAttribute("aria-expanded", String(menuOuvert));
 });
 
+document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    const parent = toggle.closest(".nav-dropdown");
+    const isOpen = parent.classList.contains("open");
+    document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+    if (!isOpen) parent.classList.add("open");
+  });
+});
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".nav-dropdown")) {
+    document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+  }
+});
+
 if (formulaire) {
   renouvelerSubmissionId();
 

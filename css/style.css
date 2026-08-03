@@ -146,11 +146,35 @@ nav {
   color: var(--blanc);
 }
 
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+.nav-dropdown-toggle::after { content: '▾'; font-size: .7em; }
+.nav-dropdown-menu {
+  list-style: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--vert);
+  min-width: 240px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 8px;
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 150;
+}
+.nav-dropdown-menu a { display: block; white-space: nowrap; }
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu { display: flex; }
+
 .nav-links .nav-cta a {
   background: var(--or);
   color: var(--blanc);
   font-weight: 600;
   padding: 10px 20px;
+  white-space: nowrap;
   box-shadow: 0 2px 8px rgba(184,132,58,.35);
 }
 .nav-links .nav-cta a:hover {
@@ -313,6 +337,7 @@ nav {
 }
 
 .carte {
+  display: block;
   background: var(--blanc);
   border-radius: var(--radius-lg);
   padding: 36px 28px;
@@ -958,6 +983,16 @@ body.theme-bleu .service-liste li::before { box-shadow: 0 0 0 2px rgba(61,155,23
   }
   .nav-links.open { display: flex; }
   .burger { display: flex; }
+
+  .nav-dropdown-menu {
+    position: static;
+    display: none;
+    background: rgba(0,0,0,.15);
+    box-shadow: none;
+    margin-top: 4px;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu { display: none; }
+  .nav-dropdown.open .nav-dropdown-menu { display: flex; }
 
   .intro-grid,
   .service-layout,

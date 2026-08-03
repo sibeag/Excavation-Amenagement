@@ -17,12 +17,19 @@ Static website (HTML/CSS/JS — no build tools, no framework) for **Groupe SPB**
 | File | Role |
 |------|------|
 | `index.html` | Home page — hero, intro, service preview cards, CTA |
-| `services.html` | Full services page — one detailed bloc per service |
+| `amenagement-paysager.html` | Service page — Aménagement Paysager, incl. its own project photo gallery |
+| `nivellement-drainage.html` | Service page — Nivellement & Drainage, incl. its own project photo gallery |
+| `excavation-soutenement.html` | Service page — Excavation & Soutènement, incl. its own project photo gallery |
+| `pave-uni-dalles.html` | Service page — Pavé Uni & Dalles de Béton, incl. its own project photo gallery |
+| `deneigement.html` | Snow removal service page (blue theme via `body.theme-bleu`) |
 | `soumission.html` | Custom quote request form |
-| `css/style.css` | Single stylesheet shared by all three pages |
+| `css/style.css` | Single stylesheet shared by all main-site pages above |
 | `js/soumission.js` | Form validation, submission state, and Google Ads conversion event |
 | `functions/api/soumission.js` | Cloudflare Pages route for the quote API |
 | `worker.js` | Shared Resend-backed quote handler and Worker test adapter |
+| `ads/` | Standalone Google Ads landing funnel — same pages/content, own design (`css/landing-ads.css`), `noindex` |
+
+There is no single "Services" page — a dropdown nav item (`.nav-dropdown`, `.nav-dropdown-menu`) links to the 4 service pages instead. There is also no standalone "Réalisations" page — each service page ends with its own "Nos réalisations" photo gallery (`.galerie-grid` + click-to-enlarge `.lightbox`) showing real project photos for that service, sourced from `images/realisations/`. Captions are the raw image filename (minus extension), per client preference — don't "clean up" the wording without asking.
 
 ## Development
 
@@ -38,7 +45,7 @@ python -m http.server 8080  # Python
 
 **CSS** is organized in named sections (`/* === ... === */`) in this order: variables/reset → utilities → nav → hero → intro → service cards → services page → CTA → form → footer → responsive. All design tokens (colors, radius, shadow) are CSS custom properties on `:root`.
 
-**Navigation** is duplicated in all three pages — update it in all files when adding pages. The current page gets `class="active"` on its `<a>` link.
+**Navigation** is duplicated across every page (both the main site and `ads/`) — update it in all files when adding pages. The current page gets `class="active"` on its `<a>` link; on a service page, the "Services" dropdown toggle also gets `class="active"`.
 
 **Form (`soumission.html`)** posts JSON to `/api/soumission`. The Cloudflare
 Pages Function validates the request through the shared handler in `worker.js`
