@@ -154,13 +154,13 @@ body.lp {
 .lp-nav-dropdown-menu {
   list-style: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 0;
   background: var(--nuit);
   min-width: 240px;
   border-radius: var(--radius);
   box-shadow: var(--ombre-lg);
-  padding: 8px;
+  padding: 12px 8px 8px;
   margin: 0;
   display: none;
   flex-direction: column;
