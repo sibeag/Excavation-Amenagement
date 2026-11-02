@@ -21,6 +21,7 @@ const SERVICES = {
   dalles: "Dalles de béton / Béton estampé",
   murets: "Murets de béton / Mur de soutènement",
   enrochement: "Enrochement",
+  transport: "Transport (équipement, pièces, vrac)",
   multiple: "Plusieurs services",
   autre: "Autre",
 };

@@ -63,7 +63,7 @@ body.lp {
   gap: 16px;
 }
 .lp-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.1rem; letter-spacing: .2px; }
-.lp-logo img { height: 40px; width: auto; }
+.lp-logo img { height: 48px; width: auto; }
 .lp-topbar-cta {
   display: flex;
   align-items: center;

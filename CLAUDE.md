@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Static website (HTML/CSS/JS — no build tools, no framework) for **Groupe SPB**, an excavation and landscaping company serving the Cantons-de-l'Est region of Quebec (Bromont, Sutton, Knowlton, Lac Brome, Shefford, Cowansville). Open any `.html` file directly in a browser to preview.
+Static website (HTML/CSS/JS — no build tools, no framework) for **Espace SB**, an excavation and landscaping company serving the Cantons-de-l'Est region of Quebec (Bromont, Sutton, Knowlton, Lac Brome, Shefford, Cowansville). Open any `.html` file directly in a browser to preview.
 
 ## Contact info
 
@@ -19,9 +19,10 @@ Static website (HTML/CSS/JS — no build tools, no framework) for **Groupe SPB**
 | `index.html` | Home page — hero, intro, service preview cards, CTA |
 | `amenagement-paysager.html` | Service page — Aménagement Paysager, incl. its own project photo gallery |
 | `nivellement-drainage.html` | Service page — Nivellement & Drainage, incl. its own project photo gallery |
-| `excavation-soutenement.html` | Service page — Excavation & Soutènement, incl. its own project photo gallery |
+| `excavation-soutenement.html` | Service page — Excavation Résidentielle (listed first in all service menus/cards), incl. its own project photo gallery |
 | `pave-uni-dalles.html` | Service page — Pavé Uni & Dalles de Béton, incl. its own project photo gallery |
 | `deneigement.html` | Snow removal service page (blue theme via `body.theme-bleu`) |
+| `transport.html` | Transport page — bulk materials, heavy equipment/machinery and parts hauling (don't mention the specific truck/trailer on the page, per client); same 3-card layout as Déneigement, default theme |
 | `soumission.html` | Custom quote request form |
 | `css/style.css` | Single stylesheet shared by all main-site pages above |
 | `js/soumission.js` | Form validation, submission state, and Google Ads conversion event |
@@ -29,7 +30,7 @@ Static website (HTML/CSS/JS — no build tools, no framework) for **Groupe SPB**
 | `worker.js` | Shared Resend-backed quote handler and Worker test adapter |
 | `ads/` | Standalone Google Ads landing funnel — same pages/content, own design (`css/landing-ads.css`), `noindex` |
 
-There is no single "Services" page — a dropdown nav item (`.nav-dropdown`, `.nav-dropdown-menu`) links to the 4 service pages instead. There is also no standalone "Réalisations" page — each service page ends with its own "Nos réalisations" photo gallery (`.galerie-grid` + click-to-enlarge `.lightbox`) showing real project photos for that service, sourced from `images/realisations/`. Captions are the raw image filename (minus extension), per client preference — don't "clean up" the wording without asking.
+There is no single "Services" page — a dropdown nav item (`.nav-dropdown`, `.nav-dropdown-menu`) links to the 6 service pages instead (the 4 landscaping/excavation pages, then Déneigement and Transport). There is also no standalone "Réalisations" page — each service page ends with its own "Nos réalisations" photo gallery (`.galerie-grid` + click-to-enlarge `.lightbox`) showing real project photos for that service, sourced from `images/realisations/`. Captions are the raw image filename (minus extension), per client preference — don't "clean up" the wording without asking.
 
 ## Development
 

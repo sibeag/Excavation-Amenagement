@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 170" role="img" aria-label="ESB Excavation et Aménagement">
+  <rect x="0" y="0" width="120" height="6" rx="3" fill="#161B18"/>
+  <rect x="125" y="0" width="80" height="6" rx="3" fill="#F2C21B"/>
+  <rect x="210" y="0" width="120" height="6" rx="3" fill="#161B18"/>
+  <g transform="translate(36,24)">
+    <path fill="#161B18" d="M0 0H70V24H28V38H62V62H28V76H70V100H0Z"/>
+    <path fill="#F2C21B" transform="translate(84,0)" d="M78 0H24Q0 0 0 24V40Q0 62 24 62H52V76H0V100H56Q80 100 80 76V60Q80 38 56 38H28V24H78Z"/>
+    <path fill="#F2C21B" fill-rule="evenodd" transform="translate(178,0)" d="M0 0H52Q78 0 78 25Q78 41 66 48Q80 55 80 74Q80 100 54 100H0ZM27 22V39H47Q53 39 53 30.5Q53 22 47 22ZM27 61V78H49Q55 78 55 69.5Q55 61 49 61Z"/>
+  </g>
+  <text x="0" y="166" textLength="330" lengthAdjust="spacingAndGlyphs" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="25" fill="#161B18">EXCAVATION ET AMÉNAGEMENT</text>
+</svg>
