@@ -6,7 +6,9 @@
   <title>Nivellement & Drainage — Espace SB | Cantons-de-l'Est</title>
   <meta name="description" content="Nivellement de terrain, correction de pente, fossé et drain français dans les Cantons-de-l'Est. Résolvez vos problèmes de drainage." />
   <meta name="robots" content="noindex, follow" />
-  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+  <link rel="icon" href="../favicon.ico?v=2" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg?v=2" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png?v=2" />
   <link rel="stylesheet" href="../css/landing-ads.css" />
 </head>
 
@@ -62,40 +64,103 @@
   <div class="lp-service-detail">
     <div class="lp-container">
       <div class="lp-service-detail-layout">
-        <div class="lp-service-detail-visuel" style="background:#fff;">
-          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Schéma illustrant la correction de pente et l'installation d'un drain français" style="width:100%; height:100%; display:block;">
+        <div class="lp-service-detail-visuel" style="background:#F4F6F2;">
+          <svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet" style="width:100%; height:100%; display:block;" role="img" aria-label="Schéma en coupe, avant et après : quand le sol descend vers la maison, l'eau ruisselle vers la fondation, s'accumule et s'infiltre; une fois le terrain rehaussé et la pente corrigée, l'eau s'éloigne de la fondation.">
             <defs>
-              <marker id="lp-fleche-eau" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-                <path d="M0,0 L0,6 L6,3 z" fill="#2D6CA6" />
+              <linearGradient id="sch-ciel" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#F7F9F5" />
+                <stop offset="1" stop-color="#E8EDE4" />
+              </linearGradient>
+              <pattern id="sch-sol" width="12" height="12" patternUnits="userSpaceOnUse">
+                <rect width="12" height="12" fill="#BBA582" />
+                <circle cx="3" cy="3" r="1" fill="#A88F6C" />
+                <circle cx="9" cy="8" r=".8" fill="#CBB797" />
+                <circle cx="7" cy="2" r=".5" fill="#A88F6C" />
+              </pattern>
+              <pattern id="sch-beton" width="8" height="8" patternUnits="userSpaceOnUse">
+                <rect width="8" height="8" fill="#A9ADAA" />
+                <circle cx="2" cy="2" r=".8" fill="#8F9390" />
+                <circle cx="6" cy="5.5" r=".7" fill="#C4C7C4" />
+              </pattern>
+              <pattern id="sch-revetement" width="34" height="9" patternUnits="userSpaceOnUse">
+                <rect width="34" height="9" fill="#2C342E" />
+                <rect y="8" width="34" height="1" fill="#1D231F" />
+              </pattern>
+              <marker id="sch-fleche" viewBox="0 0 12 12" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+                <path d="M2,2 L10,6 L2,10" fill="none" stroke="#2F7FC1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
               </marker>
+              <clipPath id="sch-panneau"><rect width="600" height="219" /></clipPath>
             </defs>
-            <rect width="600" height="400" fill="#F3EFE6" />
-            <line x1="300" y1="0" x2="300" y2="400" stroke="#C9C2B0" stroke-width="2" stroke-dasharray="6 6" />
 
-            <!-- AVANT -->
-            <text x="150" y="46" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700" fill="#334155">Avant</text>
-            <rect x="0" y="90" width="42" height="190" fill="#334155" />
-            <rect x="0" y="270" width="300" height="130" fill="#DCD3BE" />
-            <rect x="0" y="266" width="300" height="6" fill="#8C7A5B" />
-            <ellipse cx="95" cy="272" rx="50" ry="11" fill="#2D6CA6" opacity=".8" />
-            <path d="M60,272 q35,-20 70,0" stroke="#2D6CA6" stroke-width="3" fill="none" opacity=".55" />
-            <text x="150" y="332" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" fill="#5B6B63">Eau stagnante</text>
-            <text x="150" y="352" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" fill="#5B6B63">près des fondations</text>
+            <!-- ===== AVANT ===== -->
+            <g clip-path="url(#sch-panneau)">
+              <rect width="600" height="219" fill="url(#sch-ciel)" />
+              <!-- pluie -->
+              <g stroke="#A9C9E6" stroke-width="1.6" stroke-linecap="round">
+                <path d="M430 72 l-5 10" /><path d="M462 66 l-5 10" /><path d="M494 74 l-5 10" /><path d="M526 64 l-5 10" /><path d="M558 72 l-5 10" /><path d="M446 88 l-4 8" /><path d="M510 88 l-4 8" /><path d="M574 86 l-4 8" />
+              </g>
+              <!-- sol -->
+              <path d="M62 150 Q300 138 600 110 V219 H62 Z" fill="url(#sch-sol)" />
+              <path d="M62 157 Q300 145 600 117" fill="none" stroke="#7B6247" stroke-width="14" />
+              <path d="M62 150 Q300 138 600 110" fill="none" stroke="#56703F" stroke-width="3" />
+              <path d="M62 148 Q300 136 600 108" fill="none" stroke="#56703F" stroke-width="4" stroke-dasharray="1.2 4" opacity=".8" />
+              <!-- eau accumulée et infiltration -->
+              <path d="M62 143 H172 Q128 159 62 159 Z" fill="#2F7FC1" opacity=".88" />
+              <path d="M74 146.5 H140" fill="none" stroke="#FFFFFF" stroke-width="1.4" opacity=".55" stroke-linecap="round" />
+              <path d="M560 101 Q360 123 156 139" fill="none" stroke="#2F7FC1" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round" marker-end="url(#sch-fleche)" />
+              <path d="M68 162 V200" fill="none" stroke="#2F7FC1" stroke-width="2.2" stroke-dasharray="5 5" stroke-linecap="round" marker-end="url(#sch-fleche)" />
+              <!-- maison (coupe) -->
+              <rect x="0" y="0" width="30" height="219" fill="#DDE2DA" />
+              <rect x="0" y="196" width="30" height="10" fill="#C9CEC6" />
+              <rect x="30" y="0" width="32" height="132" fill="url(#sch-revetement)" />
+              <rect x="30" y="132" width="32" height="76" fill="url(#sch-beton)" />
+              <rect x="30" y="140" width="32" height="60" fill="#2F7FC1" opacity=".22" />
+              <rect x="20" y="206" width="54" height="13" fill="url(#sch-beton)" />
+              <path d="M62 0 V208 M30 0 V208" stroke="#161B18" stroke-width="1" opacity=".5" />
+              <!-- étiquettes -->
+              <text x="84" y="180" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#FFFFFF">ACCUMULATION D'EAU</text>
+              <text x="84" y="198" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#FFFFFF">INFILTRATION</text>
+              <!-- en-tête -->
+              <rect x="86" y="16" width="74" height="26" rx="3" fill="#161B18" />
+              <text x="123" y="34" text-anchor="middle" font-family="'Barlow Condensed', 'Segoe UI', sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#FFFFFF">AVANT</text>
+              <text x="174" y="33" textLength="250" lengthAdjust="spacingAndGlyphs" font-family="'Barlow Condensed', 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#161B18">LE SOL DESCEND VERS LA MAISON</text>
+              <text x="174" y="54" font-family="'Segoe UI', sans-serif" font-size="12.5" fill="#5E646B">L'eau ruisselle vers la fondation et s'y infiltre</text>
+            </g>
 
-            <!-- APRÈS -->
-            <text x="450" y="46" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700" fill="#334155">Après</text>
-            <rect x="300" y="90" width="42" height="190" fill="#334155" />
-            <polygon points="300,270 600,320 600,400 300,400" fill="#DCD3BE" />
-            <polygon points="300,270 600,320 600,312 300,262" fill="#8C7A5B" />
-            <path d="M345,264 q120,25 245,54" stroke="#2D6CA6" stroke-width="4" fill="none" marker-end="url(#lp-fleche-eau)" />
-            <circle cx="368" cy="277" r="15" fill="#F3EFE6" stroke="#5B6B63" stroke-width="2" stroke-dasharray="3 3" />
-            <circle cx="362" cy="273" r="1.6" fill="#5B6B63" />
-            <circle cx="374" cy="273" r="1.6" fill="#5B6B63" />
-            <circle cx="368" cy="280" r="1.6" fill="#5B6B63" />
-            <circle cx="362" cy="282" r="1.6" fill="#5B6B63" />
-            <circle cx="374" cy="282" r="1.6" fill="#5B6B63" />
-            <text x="450" y="345" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" fill="#5B6B63">Pente optimisée +</text>
-            <text x="450" y="365" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" fill="#5B6B63">drain français</text>
+            <!-- séparation -->
+            <rect x="0" y="219" width="600" height="3" fill="#F2C21B" />
+
+            <!-- ===== APRÈS ===== -->
+            <g transform="translate(0,222)">
+              <g clip-path="url(#sch-panneau)">
+                <rect width="600" height="219" fill="url(#sch-ciel)" />
+                <g stroke="#A9C9E6" stroke-width="1.6" stroke-linecap="round">
+                  <path d="M430 72 l-5 10" /><path d="M462 66 l-5 10" /><path d="M494 74 l-5 10" /><path d="M526 64 l-5 10" /><path d="M558 72 l-5 10" /><path d="M446 88 l-4 8" /><path d="M510 88 l-4 8" /><path d="M574 86 l-4 8" />
+                </g>
+                <!-- sol -->
+                <path d="M62 132 Q300 146 600 178 V219 H62 Z" fill="url(#sch-sol)" />
+                <path d="M62 139 Q300 153 600 185" fill="none" stroke="#7B6247" stroke-width="14" />
+                <path d="M62 132 Q300 146 600 178" fill="none" stroke="#56703F" stroke-width="3" />
+                <path d="M62 130 Q300 144 600 176" fill="none" stroke="#56703F" stroke-width="4" stroke-dasharray="1.2 4" opacity=".8" />
+                <!-- écoulement -->
+                <path d="M110 122 Q330 138 560 168" fill="none" stroke="#2F7FC1" stroke-width="2.6" stroke-dasharray="9 6" stroke-linecap="round" marker-end="url(#sch-fleche)" />
+                <!-- maison (coupe) -->
+                <rect x="0" y="0" width="30" height="219" fill="#DDE2DA" />
+                <rect x="0" y="196" width="30" height="10" fill="#C9CEC6" />
+                <rect x="30" y="0" width="32" height="124" fill="url(#sch-revetement)" />
+                <rect x="30" y="124" width="32" height="84" fill="url(#sch-beton)" />
+                <rect x="20" y="206" width="54" height="13" fill="url(#sch-beton)" />
+                <path d="M62 0 V208 M30 0 V208" stroke="#161B18" stroke-width="1" opacity=".5" />
+                <!-- étiquettes -->
+                <text x="84" y="170" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#FFFFFF">REMBLAI REHAUSSÉ</text>
+                <text x="300" y="196" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#FFFFFF">PENTE ÉLOIGNÉE DE LA FONDATION</text>
+                <!-- en-tête -->
+                <rect x="86" y="16" width="74" height="26" rx="3" fill="#F2C21B" />
+                <text x="123" y="34" text-anchor="middle" font-family="'Barlow Condensed', 'Segoe UI', sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#161B18">APRÈS</text>
+                <text x="174" y="33" font-family="'Barlow Condensed', 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#161B18">PENTE CORRIGÉE</text>
+                <text x="174" y="54" font-family="'Segoe UI', sans-serif" font-size="12.5" fill="#5E646B">L'eau s'éloigne de la fondation</text>
+              </g>
+            </g>
           </svg>
         </div>
         <div class="lp-service-detail-texte">
@@ -114,6 +179,45 @@
       </div>
     </div>
   </div>
+
+  <!-- ========== SIGNES À SURVEILLER ========== -->
+  <section class="lp-section">
+    <div class="lp-container">
+      <span class="lp-eyebrow">À surveiller</span>
+      <h2 class="lp-h2">Les signes qu'il faut revoir le nivellement</h2>
+      <p class="lp-h2-sous">Si vous remarquez un de ces signes autour de votre maison, votre terrain a probablement besoin d'être corrigé. Mieux vaut agir tôt, avant que l'eau n'endommage la fondation.</p>
+      <div class="lp-signes-grid">
+        <div class="lp-service-carte">
+          <div class="lp-signe-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2.5c2.6 3.4 4.2 5.6 4.2 7.8a4.2 4.2 0 0 1-8.4 0c0-2.2 1.6-4.4 4.2-7.8z"/><path d="M2.5 19.5c1.6 1 3.2 1 4.8 0s3.2-1 4.8 0 3.2 1 4.8 0 3.2-1 4.8 0"/></svg>
+          </div>
+          <h3>Flaques qui persistent</h3>
+          <p>L'eau stagne des jours après une pluie sur le gazon ou l'entrée.</p>
+        </div>
+        <div class="lp-service-carte">
+          <div class="lp-signe-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 11.5 8.5 7l5.5 4.5V19H3z"/><path d="M21.5 13 14 18"/><path d="M14.5 15.2 14 18l2.8.3"/></svg>
+          </div>
+          <h3>Pente vers la fondation</h3>
+          <p>Le sol descend vers la maison au lieu de s'en éloigner.</p>
+        </div>
+        <div class="lp-service-carte">
+          <div class="lp-signe-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M2 11h5l2.5 4h5L17 11h5"/><path d="M12 3v6"/><path d="m9.5 6.5 2.5 2.5 2.5-2.5"/></svg>
+          </div>
+          <h3>Terrain affaissé</h3>
+          <p>Le remblai autour de la maison s'est tassé avec les années.</p>
+        </div>
+        <div class="lp-service-carte">
+          <div class="lp-signe-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 4h8v10a4 4 0 0 0 4 4h2.5"/><path d="m15.5 15.5 2.5 2.5-2.5 2.5"/><path d="M21.5 3v18"/></svg>
+          </div>
+          <h3>Gouttières qui déversent au pied du mur</h3>
+          <p>L'eau du toit tombe directement contre la fondation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ========== NOS RÉALISATIONS ========== -->
   <section class="lp-section">

@@ -128,7 +128,7 @@ body.lp {
   padding: 8px 16px;
   border-radius: 999px;
   font-weight: 600;
-  font-size: .92rem;
+  font-size: 1.02rem;
   transition: background .18s, color .18s;
 }
 .lp-nav-links a:hover,
@@ -518,6 +518,35 @@ body.lp {
 .lp-service-carte h3 { font-size: 1.08rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -.2px; }
 .lp-service-carte p { color: var(--gris); font-size: .9rem; line-height: 1.6; }
 .lp-service-carte.lp-featured p { color: rgba(255,255,255,.78); }
+
+/* ---------- Signes à surveiller (Nivellement & Drainage) ---------- */
+.lp-signes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.lp-signes-grid .lp-service-carte { grid-column: auto; }
+.lp-signe-icone {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: var(--radius-sm);
+  background: var(--creme);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lp-signe-icone svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: var(--emeraude);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (max-width: 900px) { .lp-signes-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .lp-signes-grid { grid-template-columns: 1fr; } }
 
 /* ---------- Étapes ---------- */
 .lp-etapes {

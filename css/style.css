@@ -180,7 +180,7 @@ nav::before {
   border-radius: var(--radius);
   font-family: var(--font-titre);
   font-weight: 700;
-  font-size: 1.02rem;
+  font-size: 1.18rem;
   text-transform: uppercase;
   letter-spacing: .8px;
   position: relative;
@@ -472,6 +472,71 @@ a.carte::after {
 .carte p { color: var(--gris); font-size: .96rem; line-height: 1.7; }
 .carte .service-liste { margin-top: 18px; }
 
+/* Signes à surveiller (page Nivellement & Drainage) */
+.signes {
+  background: var(--pierre);
+  border-top: 1px solid var(--bordure);
+  border-bottom: 1px solid var(--bordure);
+}
+.signes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.signe-carte {
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  border-top: 4px solid var(--ardoise);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 26px;
+}
+.signe-icone {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  border-radius: var(--radius);
+  background: var(--ardoise);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signe-icone svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.signe-carte h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ardoise);
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+.signe-carte p { color: var(--gris); font-size: .96rem; line-height: 1.7; }
+.signes-cta {
+  margin-top: 36px;
+  font-weight: 600;
+  color: var(--ardoise);
+}
+.signes-cta a {
+  margin-left: 6px;
+  font-family: var(--font-titre);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+.signes-cta a:hover { color: var(--ardoise-3); }
+
 /* ==========================================
    Pages de service
    ========================================== */
@@ -553,7 +618,7 @@ a.carte::after {
   z-index: -1;
 }
 .service-image-schema {
-  background: var(--blanc);
+  background: #F4F6F2;
   border: 1px solid var(--bordure);
   padding: 0;
 }
@@ -1131,7 +1196,7 @@ body.theme-bleu .service-liste li::before {
    Responsive
    ========================================== */
 @media (max-width: 1020px) {
-  .nav-links a { padding: 10px 10px; font-size: .95rem; }
+  .nav-links a { padding: 10px 10px; font-size: 1.08rem; }
   .nav-links > li:not(.nav-cta):not(.nav-phone) > a::after { left: 10px; right: 10px; }
   .logo-img { height: 60px; }
 }
@@ -1153,7 +1218,7 @@ body.theme-bleu .service-liste li::before {
     box-shadow: 0 16px 32px rgba(22,24,27,.14);
   }
   .nav-links.open { display: flex; }
-  .nav-links a { width: 100%; padding: 13px 12px; font-size: 1.05rem; }
+  .nav-links a { width: 100%; padding: 13px 12px; font-size: 1.18rem; }
   .nav-links > li:not(.nav-cta):not(.nav-phone) > a::after { display: none; }
   .nav-links a.active { background: var(--fond); box-shadow: inset 3px 0 0 var(--accent); }
   .nav-links .nav-cta,
@@ -1186,6 +1251,7 @@ body.theme-bleu .service-liste li::before {
   .footer-inner { grid-template-columns: 1fr; }
 
   .intro-grid, .service-layout { gap: 48px; }
+  .signes-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { gap: 36px; }
   .form-info { position: static; }
   .service-layout.inverse { direction: ltr; }
@@ -1208,6 +1274,7 @@ body.theme-bleu .service-liste li::before {
 @media (max-width: 520px) {
   .container { padding: 0 20px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
+  .signes-grid { grid-template-columns: 1fr; }
   .form-card { padding: 0 22px 28px; }
   .form-card-entete {
     margin: 0 -22px 28px;
