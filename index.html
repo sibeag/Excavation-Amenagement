@@ -8,7 +8,7 @@
   <link rel="icon" href="favicon.ico?v=2" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=2" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=2" />
-  <link rel="stylesheet" href="css/style.css?v=20261108a" />
+  <link rel="stylesheet" href="css/style.css?v=20261116a" />
   <script src="js/analytics.js?v=20260803b" defer></script>
 </head>
 
@@ -52,14 +52,45 @@
     </div>
   </nav>
 
+  <!-- ========== BARRE D'APPEL ========== -->
+  <div class="barre-appel">
+    <div class="container barre-appel-inner">
+      <p><strong>Parlez-nous de votre projet.</strong> Appelez-nous au <a href="tel:+15147798590" data-phone-location="barre-haut">514-779-8590</a> ou décrivez-le-nous en ligne.</p>
+      <a href="soumission.html" class="barre-appel-lien">Décrire mon projet →</a>
+    </div>
+  </div>
+
   <!-- ========== HERO ========== -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">✦ Cantons-de-l'Est — Bromont · Granby · Sutton · Lac Brome · Shefford · Cowansville</div>
+      <div class="hero-badge">Entreprise familiale depuis 2015 · Cantons-de-l'Est</div>
       <h1>Excavation et<em> Terrassement</em></h1>
-<div class="hero-actions">
+      <p class="hero-sous-titre">De la première pelletée à la dernière plaque de tourbe, une équipe locale qui prépare, nivelle et aménage les terrains de Bromont à Cowansville.</p>
+      <div class="hero-actions">
         <a href="soumission.html" class="btn btn-primary">Parlez-nous de votre projet</a>
-        <a href="#services" class="btn btn-outline">Voir nos services</a>
+        <a href="tel:+15147798590" class="btn btn-outline" data-phone-location="hero">📞 514-779-8590</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BANDE DE CONFIANCE ========== -->
+  <section class="confiance">
+    <div class="container confiance-grid">
+      <div class="confiance-item">
+        <span class="confiance-chiffre">10+</span>
+        <span class="confiance-texte">ans d'expérience<br>dans la région</span>
+      </div>
+      <div class="confiance-item">
+        <span class="confiance-chiffre">100&nbsp;%</span>
+        <span class="confiance-texte">entreprise familiale<br>et locale</span>
+      </div>
+      <div class="confiance-item">
+        <span class="confiance-chiffre">1</span>
+        <span class="confiance-texte">seul interlocuteur,<br>du début à la fin</span>
+      </div>
+      <div class="confiance-item">
+        <span class="confiance-chiffre">7</span>
+        <span class="confiance-texte">municipalités<br>desservies</span>
       </div>
     </div>
   </section>
@@ -68,17 +99,17 @@
   <section class="section intro">
     <div class="container intro-grid">
       <div class="intro-texte">
-        <h2>Une équipe de confiance dans les Cantons-de-l'Est</h2>
-        <p>Nos équipes desservent les régions de Bromont, Granby, Sutton, Knowlton, Lac Brome, Shefford et Cowansville avec des services complets de travaux extérieurs. De l'excavation au pavé uni, en passant par les murets de soutènement et l'aménagement paysager, nous réalisons chaque projet avec soin et professionnalisme.</p>
-        <p> Équipements modernes et matériaux de qualité supérieure pour des résultats durables qui valorisent votre propriété.</p>
+        <h2>On fait ce qu'on dit, et on le fait bien</h2>
+        <p>Depuis 2015, nous réalisons des travaux d'excavation, de nivellement et d'aménagement pour les propriétaires de Bromont, Granby, Sutton, Knowlton, Lac Brome, Shefford et Cowansville.</p>
+        <p>Notre façon de travailler est simple : bien comprendre votre projet, vous donner un prix clair, puis livrer exactement ce qui a été convenu. Un terrain bien préparé, c'est la base de tout ce qui viendra par-dessus.</p>
         <ul class="service-liste" style="margin-top:16px;">
-          <li>Entreprise familiale depuis 2015</li>
-          <li>Fiers de servir notre communauté</li>
-          <li>Service humain et attentionné</li>
-          <li>Votre projet, sans engagement</li>
+          <li>Un seul interlocuteur, du premier appel à la fin des travaux</li>
+          <li>Un prix clair avant de commencer</li>
+          <li>Un chantier propre et sécuritaire</li>
+          <li>Une équipe d'ici, qui connaît le terrain de la région</li>
         </ul>
       </div>
-      <div class="intro-image">  <img src="images/intro.jpg" alt="Espace SB" />
+      <div class="intro-image">  <img src="images/intro.jpg" alt="Mini-excavatrice ESB au travail" />
       </div>
     </div>
   </section>
@@ -86,30 +117,73 @@
   <!-- ========== APERÇU SERVICES ========== -->
   <section class="section services-apercu" id="services">
     <div class="container">
-      <h2 class="section-titre">Nos services</h2>
-      <p class="section-sous-titre">Des solutions complètes pour vos travaux extérieurs résidentiels.</p>
-      <div class="cartes-grid">
+      <h2 class="section-titre">Ce que nous faisons</h2>
+      <p class="section-sous-titre">Des travaux extérieurs complets, réalisés par la même équipe du début à la fin.</p>
+      <div class="cartes-grid cartes-photo">
         <a class="carte" href="excavation-soutenement.html">
+          <img class="carte-photo" src="images/excavation.jpg" alt="" loading="lazy" />
           <div class="carte-icone">⛏️</div>
           <h3>Excavation Résidentielle</h3>
           <p>Excavation, préparation de chantier, murets et murs de soutènement, enrochement.</p>
         </a>
         <a class="carte" href="amenagement-paysager.html">
+          <img class="carte-photo" src="images/paysager.jpg" alt="" loading="lazy" />
           <div class="carte-icone">🌿</div>
           <h3>Aménagement Paysager</h3>
           <p>Conception et réalisation d'aménagements complets, pose de tourbe, plantations, haies de cèdres et entretien saisonnier.</p>
         </a>
         <a class="carte" href="nivellement-drainage.html">
+          <img class="carte-photo" src="images/realisations/Nivellement de Terrain.jpg" alt="" loading="lazy" />
           <div class="carte-icone">💧</div>
           <h3>Nivellement & Drainage</h3>
           <p>Nivellement de terrain, correction de pente, fossé et gestion du drainage, drain français.</p>
         </a>
         <a class="carte" href="pave-uni-dalles.html">
+          <img class="carte-photo" src="images/dalles.jpg" alt="" loading="lazy" />
           <div class="carte-icone">🧱</div>
           <h3>Pavé Uni & Dalles</h3>
           <p>Installation de patios, allées et entrées en dalles de béton, pavé uni, béton estampé ou béton lisse.</p>
         </a>
       </div>
+      <p class="services-aussi">Aussi offerts : <a href="deneigement.html">Déneigement</a> · <a href="transport.html">Transport de vrac, de machinerie et de pièces</a></p>
+    </div>
+  </section>
+
+  <!-- ========== BARRE D'APPEL (MILIEU) ========== -->
+  <div class="barre-appel barre-appel-foncee">
+    <div class="container barre-appel-inner">
+      <p><strong>Un projet en tête?</strong> Parlons-en : <a href="tel:+15147798590" data-phone-location="barre-milieu">514-779-8590</a>, du lundi au vendredi de 7 h à 17 h.</p>
+      <a href="soumission.html" class="barre-appel-lien">Décrire mon projet →</a>
+    </div>
+  </div>
+
+  <!-- ========== DÉROULEMENT ========== -->
+  <section class="section deroulement">
+    <div class="container">
+      <h2 class="section-titre">Comment se déroule votre projet</h2>
+      <p class="section-sous-titre">Pas de surprise : vous savez à quoi vous attendre à chaque étape.</p>
+      <ol class="etapes">
+        <li class="etape">
+          <span class="etape-numero">01</span>
+          <h3>Parlez-nous de votre projet</h3>
+          <p>Par téléphone ou avec le formulaire en ligne. Décrivez-nous votre terrain et ce que vous aimeriez réaliser.</p>
+        </li>
+        <li class="etape">
+          <span class="etape-numero">02</span>
+          <h3>Évaluation et prix clair</h3>
+          <p>Nous évaluons votre projet et vous remettons un prix clair, sans engagement de votre part.</p>
+        </li>
+        <li class="etape">
+          <span class="etape-numero">03</span>
+          <h3>Réalisation des travaux</h3>
+          <p>Notre équipe arrive avec l'équipement adapté et réalise les travaux tels que convenus.</p>
+        </li>
+        <li class="etape">
+          <span class="etape-numero">04</span>
+          <h3>Terrain propre, travail vérifié</h3>
+          <p>On nettoie le chantier et on fait le tour avec vous avant de partir.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -146,9 +220,10 @@
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:+15147798590" data-phone-location="footer">📞 514-779-8590</a></li>
-          <li><a href="mailto:simonbeaudet@yahoo.ca">✉️ simonbeaudet@yahoo.ca</a></li>
+          <li><a href="mailto:lesespacesb@gmail.com">✉️ lesespacesb@gmail.com</a></li>
           <li><span>📍 Bromont · Granby · Sutton · Knowlton</span></li>
           <li><span>📍 Lac Brome · Shefford · Cowansville</span></li>
+          <li><span>🕐 Lun–Ven : 7 h à 17 h</span></li>
         </ul>
       </div>
     </div>

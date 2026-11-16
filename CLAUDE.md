@@ -9,7 +9,7 @@ Static website (HTML/CSS/JS — no build tools, no framework) for **Espace SB**,
 ## Contact info
 
 - Phone: `514-779-8590`
-- Email: `infogroupespb@gmail.com`
+- Email: `lesespacesb@gmail.com`
 - Service area: Bromont, Sutton, Knowlton, Lac Brome, Shefford, Cowansville
 
 ## Structure

@@ -323,6 +323,88 @@ nav::before {
 
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
+.hero h1:has(+ .hero-sous-titre) { margin-bottom: 22px; }
+.hero-sous-titre {
+  color: rgba(255,255,255,.82);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 36px;
+}
+
+/* Barre d'appel (soumission gratuite + téléphone) */
+.barre-appel {
+  background: var(--accent);
+  color: var(--accent-texte);
+  padding: 12px 0;
+}
+.barre-appel-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 28px;
+  flex-wrap: wrap;
+}
+.barre-appel p { font-size: 1rem; }
+.barre-appel p a {
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.barre-appel-lien {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  white-space: nowrap;
+}
+.barre-appel-lien:hover { text-decoration: underline; }
+.barre-appel-foncee {
+  background: var(--ardoise);
+  color: rgba(255,255,255,.85);
+  padding: 20px 0;
+}
+.barre-appel-foncee strong { color: var(--blanc); }
+.barre-appel-foncee p a,
+.barre-appel-foncee .barre-appel-lien { color: var(--accent); }
+
+/* Bande de confiance (chiffres clés) */
+.confiance {
+  background: var(--ardoise);
+  padding: 34px 0;
+}
+.confiance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.confiance-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-left: 18px;
+  border-left: 3px solid var(--accent);
+}
+.confiance-chiffre {
+  font-family: var(--font-titre);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.confiance-texte {
+  color: rgba(255,255,255,.8);
+  font-size: .86rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+
 /* ==========================================
    Section Intro (index)
    ========================================== */
@@ -471,6 +553,73 @@ a.carte::after {
 }
 .carte p { color: var(--gris); font-size: .96rem; line-height: 1.7; }
 .carte .service-liste { margin-top: 18px; }
+
+/* Cartes avec photo (accueil) */
+.cartes-photo .carte { padding-top: 0; overflow: hidden; }
+.carte-photo {
+  display: block;
+  width: calc(100% + 56px);
+  max-width: none;
+  margin: 0 -28px 22px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+.cartes-photo .carte:hover .carte-photo { transform: scale(1.04); }
+.cartes-photo .carte-icone { margin-bottom: 10px; }
+.cartes-photo .carte-icone::before { font-size: 2rem; }
+.services-aussi {
+  margin-top: 32px;
+  color: var(--gris);
+  font-weight: 600;
+}
+.services-aussi a {
+  color: var(--ardoise);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+/* Déroulement d'un projet (accueil) */
+.deroulement { background: var(--fond); }
+.etapes {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+.etape {
+  border-top: 3px solid var(--ardoise);
+  padding-top: 22px;
+  position: relative;
+}
+.etape::before {
+  content: '';
+  position: absolute;
+  top: -3px; left: 0;
+  width: 56px; height: 3px;
+  background: var(--accent);
+}
+.etape-numero {
+  display: block;
+  font-family: var(--font-titre);
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--ardoise);
+  margin-bottom: 14px;
+}
+.etape h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ardoise);
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+.etape p { color: var(--gris); font-size: .97rem; line-height: 1.7; }
 
 /* Signes à surveiller (page Nivellement & Drainage) */
 .signes {
@@ -1252,6 +1401,9 @@ body.theme-bleu .service-liste li::before {
 
   .intro-grid, .service-layout { gap: 48px; }
   .signes-grid { grid-template-columns: repeat(2, 1fr); }
+  .confiance-grid,
+  .etapes { grid-template-columns: repeat(2, 1fr); }
+  .confiance-chiffre { font-size: 2.1rem; }
   .footer-inner { gap: 36px; }
   .form-info { position: static; }
   .service-layout.inverse { direction: ltr; }
@@ -1275,6 +1427,10 @@ body.theme-bleu .service-liste li::before {
   .container { padding: 0 20px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .signes-grid { grid-template-columns: 1fr; }
+  .etapes { grid-template-columns: 1fr; }
+  .confiance-grid { gap: 20px 12px; }
+  .confiance-item { flex-direction: column; align-items: flex-start; gap: 6px; padding-left: 12px; }
+  .barre-appel p { font-size: .94rem; }
   .form-card { padding: 0 22px 28px; }
   .form-card-entete {
     margin: 0 -22px 28px;
