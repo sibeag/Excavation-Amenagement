@@ -4,13 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Static website (HTML/CSS/JS — no build tools, no framework) for **Espace SB**, an excavation and landscaping company serving the Cantons-de-l'Est region of Quebec (Bromont, Sutton, Knowlton, Lac Brome, Shefford, Cowansville). Open any `.html` file directly in a browser to preview.
+Static website (HTML/CSS/JS — no build tools, no framework) for **Espace SB**, an excavation and landscaping company serving the Cantons-de-l'Est region of Quebec (Bromont, Sutton, Knowlton, Lac Brome, Shefford, Cowansville, Bolton, Magog, Austin). Open any `.html` file directly in a browser to preview.
 
 ## Contact info
 
 - Phone: `514-779-8590`
 - Email: `lesespacesb@gmail.com`
-- Service area: Bromont, Sutton, Knowlton, Lac Brome, Shefford, Cowansville
+- Service area: Bromont, Granby, Sutton, Knowlton, Lac Brome, Shefford, Cowansville, Bolton, Magog, Austin
 
 ## Structure
 

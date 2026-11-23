@@ -9,6 +9,9 @@ const VILLES = {
   "lac-brome": "Lac Brome",
   shefford: "Shefford",
   cowansville: "Cowansville",
+  bolton: "Bolton",
+  magog: "Magog",
+  austin: "Austin",
   autre: "Autre ville de la région",
 };
 
