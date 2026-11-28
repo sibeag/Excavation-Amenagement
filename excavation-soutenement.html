@@ -84,6 +84,33 @@
     </div>
   </div>
 
+  <!-- ========== NOS RÉALISATIONS ========== -->
+  <section class="section galerie">
+    <div class="container">
+      <h2 class="section-titre">Nos réalisations</h2>
+      <p class="section-sous-titre">Quelques projets réalisés pour nos clients des Cantons-de-l'Est.</p>
+      <div class="galerie-grid">
+        <figure class="galerie-item">
+          <img src="images/realisations/Excavation de Terrain.jpeg" alt="Excavation de Terrain" loading="lazy" />
+          <figcaption class="galerie-caption">Excavation de Terrain</figcaption>
+        </figure>
+        <figure class="galerie-item">
+          <img src="images/realisations/Tranchée.jpeg" alt="Tranchée" loading="lazy" />
+          <figcaption class="galerie-caption">Tranchée</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fermer">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="" />
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
   <!-- ========== CTA BANNER ========== -->
   <section class="cta-banner">
     <div class="container">
@@ -147,6 +174,35 @@
       if (!e.target.closest('.nav-dropdown')) {
         document.querySelectorAll('.nav-dropdown.open').forEach(function (d) { d.classList.remove('open'); });
       }
+    });
+
+    // Lightbox galerie
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var lightboxCaption = document.getElementById('lightbox-caption');
+
+    document.querySelectorAll('.galerie-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var img = item.querySelector('img');
+        var caption = item.querySelector('.galerie-caption');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = caption ? caption.textContent : '';
+        lightbox.classList.add('open');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+    }
+
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
     });
   </script>
 </body>
